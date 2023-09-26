@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Bus Arrival App</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/bootstrap-icons.svg"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/bootstrap-icons.svg"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/fb7e161b01.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body class="bg-container">
+  <header class="p-3 p-lg-4"><a onclick="myAudioFunction()"><img src="assets/logo.png" height="50px"></a></header>
+
+  <!-- ---------------------------------------main contain------------------------------------ -->
+
+  <div class="p-3 bg-light rounded p-4 m-auto" style="max-width: 1200px">
+
+    <!-- -----title------ -->
+    <div class="text-start pt-2 pb-4">
+      <h1 class="text-success">NextBus Arrival Timings</h1>
+      <h6>Find out the estimated arrival time of your next bus!</h6>
+    </div>
+
+    <!-- bus stop search- -->
+    <div class="card text-start p-3">
+      <h2>Search by Bus Stop No.</h2>
+      <label class="fs-5">Bus Stop No.</label>
+      <select id="selectorBusStop" class="p-2 mb-5 rounded">
+        <option value="83139">83139 - Aft Joo Chiat Pl, Telok Kurau Rd</option>
+      </select>
+      <a class="btn btn-success text-center fw-bold" onclick="getBusTiming()">Estimate Arrival Time</a>
+    </div>
+    <p class="text-start fw-light pb-4">Bus Arrival Information provided by ArriveLah</p>
+
+    <!-- ---next bus arrival infomation--- -->
+    <div>
+      <label class="fs-6 text-start">Bus No.:</label>
+      <!-- press enter to run -->
+        <input type="text" id="busIdInput" class="p-1 rounded" onkeydown="checkEnter(event)">
+      <div class="text-light text-end pe-5 bg-secondary m-0 rounded-top">
+        <a class="btn text-light" onclick="resetBusInfo()">Reset</a>
+      </div>
+
+      <div class="row m-0">
+
+        <div class="row text-start bg-success-subtle m-0 col-6 col-sm-12">
+          <div class="col-sm-4 border-top border-secondary">Bus No.</div>
+          <div class="col-sm-2 border-top border-secondary">Next Bus</div>
+          <div class="col-sm-2 border-top border-secondary">Subsequent Bus</div>
+          <div class="col-sm-2 border-top border-secondary">Next2 Bus</div>
+          <div class="col-sm-2 border-top border-secondary">Next3 Bus</div>
+        </div>
+
+        <div class="row text-start text-light bg-secondary m-0 col-6 col-sm-12 rounded-bottom">
+          <div id="busId" class="col-sm-4 border-top border-success-subtle">-</div>
+          <div id="nextBus" class="col-sm-2 border-top border-success-subtle">-</div>
+          <div id="subBus" class="col-sm-2 border-top border-success-subtle">-</div>
+          <div id="nextBus2" class="col-sm-2 border-top border-success-subtle">-</div>
+          <div id="nextBus3" class="col-sm-2 border-top border-success-subtle">-</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- ----------footer----------- -->
+
+  <footer class="text-center text-light fw-bold py-4">
+    <p>&copy; 2023 Zeph. All right reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+
+</html>
