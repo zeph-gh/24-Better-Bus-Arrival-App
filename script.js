@@ -55,11 +55,11 @@ async function fetchBusArrival(busStopIdInput, busIdFilter) {
         let nextBus2Info = nextNext2Minute <= 0 ? 'Arriving' : nextNext2Minute;
         let nextBus3Info = nextNext3Minute <= 0 ? 'Arriving' : nextNext3Minute;
 
-        busId += `<div id="busId" class="col-sm-4">${busIdInfo}</div>`
-        nextBus += `<div id="busId" class="col-sm-2">${nextBusInfo}</div>`
-        subBus += `<div id="busId" class="col-sm-2">${subBusInfo}</div>`
-        nextBus2 += `<div id="busId" class="col-sm-2">${nextBus2Info}</div>`
-        nextBus3 += `<div id="busId" class="col-sm-2">${nextBus3Info}</div>`
+        busId += `<div id="busId" class="col-sm-4">No. ${busIdInfo}</div>`
+        nextBus += `<div id="busId" class="col-sm-2">${nextBusInfo} mins</div>`
+        subBus += `<div id="busId" class="col-sm-2">${subBusInfo} mins</div>`
+        nextBus2 += `<div id="busId" class="col-sm-2">${nextBus2Info} mins</div>`
+        nextBus3 += `<div id="busId" class="col-sm-2">${nextBus3Info} mins</div>`
 
       }
 
