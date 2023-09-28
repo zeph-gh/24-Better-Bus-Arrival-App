@@ -39,9 +39,9 @@ async function fetchBusArrival(busStopIdInput, busIdFilter) {
         const next2Exists = service.next2 && service.next2.duration_ms !== null;
         const next3Exists = service.next3 && service.next3.duration_ms !== null;
 
-        const nextMinute = nextExists ? (service.next.duration_ms / 60000).toFixed(0) : 'N/A';
-        const next2Minute = next2Exists ? (service.next2.duration_ms / 60000).toFixed(0) : 'N/A';
-        const next3Minute = next3Exists ? (service.next3.duration_ms / 60000).toFixed(0) : 'N/A';
+        const nextMinute = nextExists ? (service.next.duration_ms / 60000).toFixed(0) : '(N/A)';
+        const next2Minute = next2Exists ? (service.next2.duration_ms / 60000).toFixed(0) : '(N/A)';
+        const next3Minute = next3Exists ? (service.next3.duration_ms / 60000).toFixed(0) : '(N/A)';
 
         // -------------api data formatting----------
 

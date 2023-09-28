@@ -49,6 +49,7 @@
         <h2>Search by Bus Stop No.</h2>
         <label class="fs-5">Bus Stop No.</label>
         <select id="selectorBusStop" class="p-2 mb-5 rounded">
+          <option value="83139" class="text-danger">83139</option>
           <option value="01012">01012</option>
           <option value="01013">01013</option>
           <option value="01019">01019</option>
@@ -4606,7 +4607,6 @@
           <option value="83121">83121</option>
           <option value="83129">83129</option>
           <option value="83131">83131</option>
-          <option value="83139" class="text-danger">83139</option>
           <option value="83141">83141</option>
           <option value="83149">83149</option>
           <option value="83151">83151</option>
@@ -5159,23 +5159,23 @@
         </div>
 
         <div class="text-light text-end pe-5 bg-secondary m-0 rounded-top">
-          <a class="btn text-light" onclick="resetBusInfo()">Reset</a>
+          <a class="btn text-light fw-bold" onclick="resetBusInfo()">Reset</a>
         </div>
 
         <div class="row m-0">
           <div class="row text-start bg-success-subtle m-0">
-            <div class="col-3 border-top border-secondary">Bus No.</div>
-            <div class="col-3 border-top border-secondary">Next Bus</div>
-            <div class="col-3 border-top border-secondary">Next2 Bus</div>
-            <div class="col-3 border-top border-secondary">Next3 Bus</div>
+            <div class="col-3 fw-bold border-end border-secondary">Bus No.</div>
+            <div class="col-3 fw-bold border-end border-secondary">Next Bus</div>
+            <div class="col-3 fw-bold border-end border-secondary">Next2 Bus</div>
+            <div class="col-3 fw-bold">Next3 Bus</div>
           </div>
 
           <div
             class="row text-start text-light bg-secondary m-0 rounded-bottom"
           >
-            <div id="busId" class="col-3">-</div>
-            <div id="nextBus" class="col-3">-</div>
-            <div id="nextBus2" class="col-3">-</div>
+            <div id="busId" class="col-3 border-end border-success-subtle">-</div>
+            <div id="nextBus" class="col-3 border-end border-success-subtle">-</div>
+            <div id="nextBus2" class="col-3 border-end border-success-subtle">-</div>
             <div id="nextBus3" class="col-3">-</div>
           </div>
         </div>
