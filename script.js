@@ -11,7 +11,6 @@ function myAudioFunction() {
 
 const busIdDiv = document.getElementById('busId');
 const nextBusDiv = document.getElementById('nextBus');
-const subBusDiv = document.getElementById('subBus');
 const nextBus2Div = document.getElementById('nextBus2');
 const nextBus3Div = document.getElementById('nextBus3');
 
@@ -27,7 +26,6 @@ async function fetchBusArrival(busStopIdInput, busIdFilter) {
       // ------------clear html-------------
       let busId = '';
       let nextBus = '';
-      let subBus = '';
       let nextBus2 = '';
       let nextBus3 = '';
 
@@ -38,34 +36,29 @@ async function fetchBusArrival(busStopIdInput, busIdFilter) {
       }
         // --------avoid null error to make crash--------
         const nextExists = service.next && service.next.duration_ms !== null;
-        const subsequentExists = service.subsequent && service.subsequent.duration_ms !== null;
         const next2Exists = service.next2 && service.next2.duration_ms !== null;
         const next3Exists = service.next3 && service.next3.duration_ms !== null;
 
         const nextMinute = nextExists ? (service.next.duration_ms / 60000).toFixed(0) : 'N/A';
-        const subsequentMinute = subsequentExists ? (service.subsequent.duration_ms / 60000).toFixed(0) : 'N/A';
-        const nextNext2Minute = next2Exists ? (service.next2.duration_ms / 60000).toFixed(0) : 'N/A';
-        const nextNext3Minute = next3Exists ? (service.next3.duration_ms / 60000).toFixed(0) : 'N/A';
+        const next2Minute = next2Exists ? (service.next2.duration_ms / 60000).toFixed(0) : 'N/A';
+        const next3Minute = next3Exists ? (service.next3.duration_ms / 60000).toFixed(0) : 'N/A';
 
         // -------------api data formatting----------
 
         let busIdInfo = service.no;
-        let nextBusInfo = nextMinute <= 0 ? 'Arriving' : nextMinute;
-        let subBusInfo = subsequentMinute <= 0 ? 'Arriving' : subsequentMinute;
-        let nextBus2Info = nextNext2Minute <= 0 ? 'Arriving' : nextNext2Minute;
-        let nextBus3Info = nextNext3Minute <= 0 ? 'Arriving' : nextNext3Minute;
+        let nextBusInfo = nextMinute <= 0 ? 'Arriving' : `${nextMinute}mins`;
+        let nextBus2Info = next2Minute <= 0 ? 'Arriving' : `${next2Minute}mins`;
+        let nextBus3Info = next3Minute <= 0 ? 'Arriving' : `${next3Minute}mins`;
 
-        busId += `<div id="busId" class="col-sm-4">No. ${busIdInfo}</div>`
-        nextBus += `<div id="busId" class="col-sm-2">${nextBusInfo} mins</div>`
-        subBus += `<div id="busId" class="col-sm-2">${subBusInfo} mins</div>`
-        nextBus2 += `<div id="busId" class="col-sm-2">${nextBus2Info} mins</div>`
-        nextBus3 += `<div id="busId" class="col-sm-2">${nextBus3Info} mins</div>`
+        busId += `<div id="busId" class="col-3">No.${busIdInfo}</div>`
+        nextBus += `<div id="busId" class="col-3">${nextBusInfo}</div>`
+        nextBus2 += `<div id="busId" class="col-3">${nextBus2Info}</div>`
+        nextBus3 += `<div id="busId" class="col-3">${nextBus3Info}</div>`
 
       }
 
       busIdDiv.innerHTML = busId;
       nextBusDiv.innerHTML = nextBus;
-      subBusDiv.innerHTML = subBus;
       nextBus2Div.innerHTML = nextBus2;
       nextBus3Div.innerHTML = nextBus3;
 
@@ -95,7 +88,6 @@ function resetBusInfo() {
   // ----dash to busInfo---------
   busIdDiv.innerHTML = '-';
   nextBusDiv.innerHTML = '-';
-  subBusDiv.innerHTML = '-';
   nextBus2Div.innerHTML = '-';
   nextBus3Div.innerHTML = '-';
 }
