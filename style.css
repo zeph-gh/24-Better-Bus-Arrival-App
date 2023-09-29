@@ -1,6 +1,5 @@
 .bg-container {
   background-image: url('./assets/background.png');
   background-size: cover;
-  color: #3a2d37;
-  margin: 100px;
+  color: #3a2d37
 }
